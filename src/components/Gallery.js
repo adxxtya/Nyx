@@ -13,6 +13,16 @@ function getItems(nextGroupKey, count) {
     return nextItems;
 }
 
+const Loader = () => (
+    <div class="container">
+        <div class="loader"></div>
+        <div class="loader"></div>
+        <div class="loader"></div>
+    </div>
+
+);
+
+
 const Item = ({ imageLink }) => (
     <div className="item bg-green-500 m-0 max-w-[100px] md:max-w-[200px] lg:max-w-[250px] hover:scale-[1.015] cursor-pointer transition-all ease-in-out duration-300">
         <div className="thumbnail bg-lime-300">
@@ -84,9 +94,10 @@ export default function Gallery({ isSubmitted, query, source, device }) {
     return (
         <div className="w-full h-full flex justify-center">
             <div className="overflow-y-auto w-[100%] overflow-x-hidden flex flex-col justify-center items-center">
-                {loading && <div className="text-sm/[16px] md:text-lg  mb-2 w-[90%]">Search results of {query} for {
+                {loading && <div className="text-sm/[16px] md:text-lg my-2 w-[90%]">Searching for the best wallpapers <br /> of {`"${query}"`} for {
                     device === "device1" ? ("all devices") : (device === "device2" ? "desktop devices" : "mobile devices")
                 } </div>}
+                {loading && <Loader />}
                 {!loading && <MasonryInfiniteGrid
                     className="container"
                     gap={5} align="center"
