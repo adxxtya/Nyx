@@ -1,3 +1,3 @@
-Try it out [live](htt[s://nyx-wallpaper.netlify.app])
+Try it out [live](https://nyx-wallpaper.netlify.app)
 
 ~ still in development preocess
