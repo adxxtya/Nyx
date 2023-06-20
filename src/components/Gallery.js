@@ -51,13 +51,15 @@ export default function Gallery({ isSubmitted, query, source, device }) {
         async function fetchHTML() {
             setLoading(true)
             try {
-                const res = await fetch(`http://localhost:5050/api/s1?query=${query}&device=${device}`, {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_LINK}api/s1?query=${query}&device=${device}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
                         Accept: "application/json",
                     },
                 });
+
+                console.log(`${process.env.SERVER_LINK}api/s1?query=${query}&device=${device}`);
 
                 if (!res.ok) {
                     throw new Error("Failed to fetch");

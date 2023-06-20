@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@egjs/infinitegrid": "^4.10.0",
     "@egjs/react-infinitegrid": "^4.10.0",
     "@next/font": "^13.4.6",
     "autoprefixer": "10.4.14",
