@@ -26,7 +26,8 @@ const Loader = () => (
 const Item = ({ imageLink }) => (
     <div className="item bg-green-500 m-0 max-w-[100px] md:max-w-[200px] lg:max-w-[250px] hover:scale-[1.015] cursor-pointer transition-all ease-in-out duration-300">
         <div className="thumbnail bg-lime-300">
-            <img src={`${imageLink.slice(0, -4)}-thumbnail.jpg`} alt="wallpaper" />
+            {/* <img src={`${imageLink.slice(0, -4)}-thumbnail.jpg`} alt="wallpaper" /> */}
+            <img src={`${imageLink}`} alt="wallpaper" />
         </div>
     </div>
 );
