@@ -8,6 +8,7 @@ export default function Browse() {
 
     const [inputValue, setInputValue] = useState('');
     const [selectedOption, setSelectedOption] = useState('1');
+    const [isSource, setIsSource] = useState('');
     const [selectedOption2, setSelectedOption2] = useState('device1');
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [submittedQuery, setSubmittedQuery] = useState('');
@@ -31,6 +32,7 @@ export default function Browse() {
         event.preventDefault();
         setSubmittedQuery(inputValue);
         setSubmittedDevice(selectedOption2)
+        setIsSource(selectedOption)
         setIsSubmitted(true);
     };
 
@@ -162,13 +164,13 @@ export default function Browse() {
                         </div>
                     </div>
                 </form>
-                <div className="mt-4 text-slate-500 text-center h-[60dvh] lg:h-[65vh]">
+                <div className="mt-4 text-slate-500 h-[60dvh] lg:h-[65vh]">
 
                     <div className="h-[100%] overflow-x-hidden">
                         <Gallery
                             isSubmitted={isSubmitted}
                             query={submittedQuery}
-                            source={selectedOption}
+                            source={isSource}
                             device={submittedDevice}
                         />
                     </div>
