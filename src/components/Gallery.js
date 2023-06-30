@@ -83,7 +83,8 @@ export default function Gallery({ isSubmitted, query, source, device }) {
         setLoading(true);
         try {
             const res = await fetch(
-                `http://localhost:5050/api/s1?query=${query}&device=${device}&page=${page}`,
+                // `http://localhost:5050/api/s1?query=${query}&device=${device}&page=${page}`,
+                `${process.env.NEXT_PUBLIC_SERVER_LINK}api/s1?query=${query}&device=${device}&page=${page}`,
                 {
                     method: "GET",
                     headers: {
@@ -172,7 +173,7 @@ export default function Gallery({ isSubmitted, query, source, device }) {
                                                     <FaAngleLeft color="white" size={18} />
                                                 </button>
                                             )}
-                                            <div className="mx-6 text-xl flex whitespace-nowrap">Page {page} </div>
+                                            <div className="mx-6 text-xl flex whitespace-nowrap">Page {page}</div>
                                             <button
                                                 className="bg-[#FF4D00] p-2 rounded-full"
                                                 onClick={() => {
@@ -201,7 +202,6 @@ export default function Gallery({ isSubmitted, query, source, device }) {
                                     />
                                 ))}
                             </MasonryInfiniteGrid>
-
                         </>
                     }
                 </div>
