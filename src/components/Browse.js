@@ -13,7 +13,7 @@ export default function Browse() {
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [submittedQuery, setSubmittedQuery] = useState('');
     const [submittedDevice, setSubmittedDevice] = useState('');
-
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
@@ -31,9 +31,10 @@ export default function Browse() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setSubmittedQuery(inputValue);
-        setSubmittedDevice(selectedOption2)
-        setIsSource(selectedOption)
+        setSubmittedDevice(selectedOption2);
+        setIsSource(selectedOption);
         setIsSubmitted(true);
+        setIsFormSubmitted(true);
     };
 
 
@@ -41,9 +42,9 @@ export default function Browse() {
         <main className="h-[92dvh] w-full bg-black sticky top-0 lg:h-[90vh]">
             <div className="h-full w-full rounded-t-[50px] bg-white">
                 <div
-                    className="h-[10dvh] flex justify-center items-center lg:justify-start lg:ml-16 md:h-[10vh] lg:h-[6vh] lg:mb-4"
+                    className="h-[10dvh] flex justify-center items-center lg:justify-start lg:ml-16 md:h-[10vh] lg:h-[8vh] lg:mb-4"
                 >
-                    <h2 className="text-2xl md:text-5xl lg:text-4xl">Browse Wallpapers on Nyx 👇️</h2>
+                    <h2 className="text-2xl md:text-5xl lg:text-4xl ">Browse Wallpapers on Nyx 👇️</h2>
                 </div>
 
                 <form
@@ -168,7 +169,7 @@ export default function Browse() {
 
                     <div className="h-[100%] overflow-x-hidden">
                         <Gallery
-                            isSubmitted={isSubmitted}
+                            isSubmitted={isFormSubmitted}
                             query={submittedQuery}
                             source={isSource}
                             device={submittedDevice}
